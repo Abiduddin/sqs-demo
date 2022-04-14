@@ -1,0 +1,16 @@
+cloud:
+  aws:
+    stack:
+      auto: false
+    region:
+      static: ap-southeast-1
+      auto: false
+    credentials:
+      access-key: your_access_key_id
+      secret-key: your_secret_access_key
+    queue:
+      uri: http://localhost:4555
+      name: sample-queue.fifo
+
+server:
+  port: 8086

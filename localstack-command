@@ -1,0 +1,16 @@
+# create sqs
+aws --endpoint-url=http://localhost:4555 sqs create-queue --queue-name sample-queue
+# create sqs
+aws --endpoint-url=http://localhost:4555 sqs create-queue --queue-name sample-queue.fifo --attributes FifoQueue=true
+
+# Queue list
+aws --endpoint-url=http://localhost:4555 sqs list-queues
+
+# Create SQS Queue Message
+aws --endpoint-url=http://localhost:4555 sqs send-message --queue-url http://localhost:4555/000000000000/sample-queue.fifo --message-body 'Welcome to SQS queue by sample-queue.fifo'
+
+# Read SQS Queue Messages
+aws --endpoint-url=http://localhost:4555 sqs receive-message --queue-url http://localhost:4555/000000000000/sample-queue.fifo
+
+# Delete SQS Queue
+aws --endpoint-url=http://localhost:4555 sqs delete-queue --queue-url http://localhost:4555/000000000000/sample-queue.fifo

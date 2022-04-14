@@ -1,0 +1,14 @@
+cloud:
+  aws:
+    stack:
+      auto: false
+    region:
+      static: ap-southeast-1
+    credentials:
+      access-key: your_access_key_id
+      secret-key: your_secret_access_key
+    end-point:
+      uri: http://localhost:4555
+
+server:
+  port: 8087

@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  aws:
+    image: 'localstack/localstack'
+    container_name: 'localstack'
+    environment:
+      - SERVICES=sqs
+      - DEFAULT_REGION=ap-southeast-1
+      - AWS_DEFAULT_REGION=ap-southeast-1
+      - DEBUG=1
+      - EDGE_PORT=4555
+      - DATA_DIR=/tmp/localstack/data
+    ports:
+      - '4555:4555'
